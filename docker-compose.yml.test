@@ -1,0 +1,15 @@
+version: '3.2'
+
+# This is based off of the example docker-compose at: https://github.com/itzg/docker-minecraft-server/blob/master/examples/docker-compose-curseforge.yml
+services:
+  mc:
+    image: itzg/minecraft-server
+    volumes:
+    - ./modpacks:/modpacks:ro
+    - ./data:/data
+    environment:
+      EULA: "true"
+      TYPE: CURSEFORGE
+      CF_SERVER_MOD: /modpacks/SkyFactory-4_Server_4.2.2.zip
+    ports:
+      - 25565:25565
