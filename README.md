@@ -3,6 +3,11 @@
 This repository will set up a curseforge modded minecraft server utilizing the [itzg/minecraft-server
 ](https://hub.docker.com/r/itzg/minecraft-server) docker image
 
+## Dependencies
+
+1. [docker](https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe)
+2. [python]() for running the backup and modswap scripts
+
 ## Running server
 
 `docker-compose up`
@@ -21,6 +26,12 @@ This repository will set up a curseforge modded minecraft server utilizing the [
 CF_SERVER_MOD: /modpacks/<mod_file_name>
 ```
 4. Run the server with `docker-compose up`
+
+
+## Backing Up Data / Modpacks
+
+1. Run `./backup_server.py --backupfolder <folder_name_for_backup>`
+   1. This will backup the data and modpacks by default.  Can ignore either by passing `--skipdata` or --`skipmods` respectively
 
 ## Documentation Links
 
